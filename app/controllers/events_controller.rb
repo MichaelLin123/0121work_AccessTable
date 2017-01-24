@@ -24,7 +24,12 @@ class EventsController < ApplicationController
     redirect_to :action => :show, :id => @event
     flash[:notice] = "event was successfully edited"
   end
-  
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    flash[:notice] = "event was successfully destroy"
+    redirect_to :action => :index
+  end
 
   private
 
