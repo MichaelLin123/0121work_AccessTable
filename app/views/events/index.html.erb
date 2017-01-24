@@ -5,8 +5,8 @@
 <% @events.each do |event| %>
   <li>
  	  <%= event.teamName %>
-    <%= link_to 'Show', :controller => 'events', :action => 'show', :id => event %>
-    <%= link_to 'Edit', :controller => 'events', :action => 'edit', :id => event %>
+    <%= link_to 'Show', event_path(event)  %>
+    <%= link_to 'Edit', edit_event_path(event) %>
     <%= link_to 'Delete', :controller => 'events', :action => 'destroy', :id => event %>
   </li>
 <% end %>
