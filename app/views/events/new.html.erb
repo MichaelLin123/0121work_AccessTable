@@ -1,0 +1,12 @@
+<%= form_for @event, :url => { :controller => 'events', :action => 'create' } do |f| %>
+    <%= f.label :teamName, "TeamName" %>
+    <%= f.text_field :teamName %>
+
+    <%= f.label :coach, "CoachName" %>
+    <%= f.text_field :coach %>
+
+    <%= f.label :is_west, "West ?" %>
+    <%= f.text_field :is_west %>
+
+    <%= f.submit "Create" %>
+<% end %>
