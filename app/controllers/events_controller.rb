@@ -13,7 +13,14 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
   end
-
+  def edit
+    @event = Event.find(params[:id])
+  end
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    redirect_to :action => :show, :id => @event
+  end
 
   private
 

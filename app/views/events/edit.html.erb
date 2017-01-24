@@ -1,0 +1,12 @@
+<%= form_for @event, :url => { :controller => 'events', :action => 'update', :id => @event } do |f| %>
+    <%= f.label :teamName, "隊名" %>
+    <%= f.text_field :teamName %>
+
+    <%= f.label :coach, "教練" %>
+    <%= f.text_field :coach %>
+
+    <%= f.label :is_west, "西區球隊" %>
+    <%= f.text_field :is_west %>
+
+    <%= f.submit "Update" %>
+<% end %>
