@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(version: 20170124063254) do
 
   create_table "events", force: :cascade do |t|
     t.string   "teamName"
-    t.text     "description"
+    t.text     "coach"
     t.boolean  "is_west"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
