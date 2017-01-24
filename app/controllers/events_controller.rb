@@ -7,9 +7,12 @@ class EventsController < ApplicationController
   end
   def create
     @event = Event.new(event_params)
-    @event.save
+    if @event.save
+      redirect_to :action => :index
+    else
+      render :action => :new
+    end
     flash[:notice] = "event was successfully created"
-    redirect_to :action => :index
   end
   def show
     @event = Event.find(params[:id])
@@ -20,8 +23,11 @@ class EventsController < ApplicationController
   end
   def update
     @event = Event.find(params[:id])
-    @event.update(event_params)
-    redirect_to :action => :show, :id => @event
+    if @event.update(event_params)
+      redirect_to :action => :show, :id => @event
+    else
+      render :action => :edit
+    end
     flash[:notice] = "event was successfully edited"
   end
   def destroy
